@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tic Tac Toe Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Mode Selection -->
+  <div id="mode-screen" class="mode-screen">
+    <h1>Tic Tac Toe 🎮</h1>
+    <p>Choose a mode:</p>
+    <button onclick="showFriendGender()">👥 Play with Friend</button>
+    <button onclick="showAIMenu()">🤖 Play with AI</button>
+  </div>
+
+  <!-- Gender Selection -->
+  <div id="gender-screen" class="mode-screen" style="display: none">
+    <h2>Select Players</h2>
+    <button onclick="chooseFriendGender('male')">🧑 Male vs Male</button>
+    <button onclick="chooseFriendGender('female')">👩 Female vs Female</button>
+    <button onclick="chooseFriendGender('mixed')">🧑‍🤝‍👩 Mixed</button>
+    <button onclick="backToModeMenu()">⬅️ Back</button>
+  </div>
+
+  <!-- AI Difficulty Selection -->
+  <div id="ai-screen" class="mode-screen" style="display:none">
+    <h2>Choose AI Level</h2>
+    <button onclick="chooseAIMode('easy')">🟢 Easy</button>
+    <button onclick="chooseAIMode('medium')">🟠 Medium</button>
+    <button onclick="chooseAIMode('hard')">🔴 Hard</button>
+    <button onclick="backToModeMenu()">⬅️ Back</button>
+  </div>
+
+  <!-- Game UI -->
+  <div id="game-screen" style="display:none">
+    <h1 id="game-title">Tic Tac Toe</h1>
+    <div class="scoreboard" id="status">Loading...</div>
+    <div class="board" id="board"></div>
+    <div class="top-buttons">
+      <button onclick="resetGame()">🔁 Play Again</button>
+      <button onclick="backToModeMenu()">⬅️ Exit</button>
+    </div>
+  </div>
+
+  <!-- Win Popup -->
+  <div id="win-popup" class="popup">
+    <div class="popup-content">
+      <img src="celebrate.gif" class="gif" alt="Celebrate" />
+      <h2 id="win-message">🎉 Congratulations!</h2>
+      <button onclick="closePopup()">Play Again 🔁</button>
+    </div>
+  </div>
+
+  <!-- Audio -->
+  <audio id="clickSound" src="click.mp3"></audio>
+  <audio id="winSound" src="win.mp3"></audio>
+  <audio id="bgMusic" src="backmusic.mp3" loop autoplay></audio>
+  <audio id="resetSound" src="reset.mp3"></audio>
+  <audio id="errorSound" src="error.mp3"></audio>
+  <audio id="startSound" src="start.mp3"></audio>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>
